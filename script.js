@@ -1,19 +1,22 @@
 function adicionarTarefa() {
-    let mensagem = "Tarefa adicionada com sucesso!";
+  let inputTarefa = document.getElementById("inputTarefa");
+  let tarefa = inputTarefa.value.trim()//trim polda para que o espaçamento no começo e final sejam ajustados
 
-          //document.getElementById("mensagem").textContent = mensagem;
+  if (tarefa == "") {
+    let mensagemVazia = "Área vazia, tente adicionar uma tarefa";
+    document.getElementById("mensagem").textContent = mensagemVazia;
+  } else {
+    let mensagemSucesso = "Tarefa adicionada com sucesso!";
+    document.getElementById("mensagem").textContent = mensagemSucesso;
 
-          let inputTarefa = document.getElementById("inputTarefa")
-          let tarefa = inputTarefa.value
-          document.getElementById("mensagem").textContent = mensagem;
+    let listaTarefas = document.getElementById("listaTarefas")
 
-          let listaTarefas = document.getElementById("listaTarefas")
-          let novaTarefa = document.createElement("li")
+    let novaTarefa = document.createElement("li")
+    novaTarefa.textContent = tarefa
 
-          novaTarefa.textContent = tarefa
-
-          listaTarefas.appendChild(novaTarefa)
-
-          inputTarefa.value = ""
-     
+    listaTarefas.appendChild(novaTarefa)
   }
+  //limpa o inpput do usuário
+  inputTarefa.value = ""
+
+}
