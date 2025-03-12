@@ -69,8 +69,30 @@ function editarTarefa(i) {
 }
 
 function limparLista() {
-  tarefas.length = 0;
-  renderizarTarefas()
-  const mensagem = document.getElementById("mensagem")
-  mensagem.textContent = "Lista limpa com sucesso !"
+  const mensagem = document.getElementById("mensagem");
+
+  if (tarefas.length == 0) {
+    mensagem.textContent = "Não é possível limpar uma lista Vazia !";
+  } else {
+    tarefas.length = 0;
+    renderizarTarefas()
+    mensagem.textContent = "Lista limpa com sucesso !"
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
